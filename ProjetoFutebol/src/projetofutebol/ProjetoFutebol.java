@@ -15,7 +15,8 @@ public class ProjetoFutebol {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+      CadastrarTime cadastrar = new CadastrarTime();
+                cadastrar.setVisible(true);
     
+}
 }
