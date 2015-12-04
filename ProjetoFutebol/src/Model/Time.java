@@ -9,7 +9,7 @@ package Model;
  *
  * @author 631410170
  */
-class Time {
+public class Time {
     private String nome;
     private int anoFundacao;
     private String estadio;
