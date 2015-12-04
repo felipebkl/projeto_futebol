@@ -124,7 +124,7 @@ public class JAdicionarJogador {
             public void actionPerformed(ActionEvent e) {
                 
                 
-                 //adiciona lina  
+                 //adiciona linha  
                 nl = new Object[]{Jogador.getText(),PC.getText() ,PE.getText() ,DC.getText(),DE.getText()};  
                 Principal.adicionaLinha(nl);  
                 Principal.openJa=0;  
@@ -143,11 +143,6 @@ public class JAdicionarJogador {
         //opcoes finais da janela  
         jAdicionar.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  
         jAdicionar.setVisible(true);  
-    }  
-  
-    @SuppressWarnings("unused")
-	public static void main(String args[]) {  
-        JAdicionarJogador ja = new JAdicionarJogador();  
     }  
 
     public static JFrame getjAdicionar() {

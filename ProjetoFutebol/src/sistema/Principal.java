@@ -35,7 +35,7 @@ public class Principal {
         private static JMenuItem itemCreditos;
         
         private static JButton btnCalcular;
-	private String alerta = "Você deve inserir pelo menos 1 processo e qual o quantum!";
+	private String alerta = "Erro!";
 	private static DefaultTableModel model; // modelo de table - modelo de dados
 	private static JTextField tquantum; // campo de texto para o quantum
 
@@ -158,7 +158,7 @@ public class Principal {
 		// itens do menu
 		itemAdicionar = new JMenuItem("Adicionar Jogador");
 		itemRemover = new JMenuItem("Remover Jogador");
-                btnCalcular = new JButton("Calcular");
+                btnCalcular = new JButton("Estatísticas");
                 
                
                 

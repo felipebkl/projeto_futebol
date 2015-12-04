@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 public class Resultado {
 
     private JFrame jResultado;
-
+    private int[][] mMelhor;
     private int linhas;
 
     @SuppressWarnings("serial")
@@ -55,21 +55,25 @@ public class Resultado {
         // popula models
         //Verifica se existe linha selecionada para não dar erro na hora de pegar os valores  
         //Pega os models das listas, para fazer as inserções e remoções  
-        
-
         //Cria uma linha para ser incluida na tabela de destino, no meu caso tem duas colunas, adapte para as suas tabelas  
-        int cont[] = Principal.table.getSelectedRows();
-        for(int i=0;i <= cont.length;i++ ){
-            
-        Object[] obj = new Object[]  {Principal.table.getValueAt(i, 0), 
-            Principal.table.getValueAt(i, 1),
-            Principal.table.getValueAt(i, 2),
-            Principal.table.getValueAt(i, 3),
-            Principal.table.getValueAt(i, 4)};
+        int cont = Principal.table.getRowCount();
 
-        //Adiciona no destino e remove da origem  
-        modelMelhor.addRow(obj);
-        modelPior.addRow(obj);
+        for (int i = 0; i < cont; i++) {
+            
+         
+          
+            modelMelhor.addRow(new Object[]{Principal.table.getValueAt(i, 0),
+                Principal.table.getValueAt(i, 1),
+                Principal.table.getValueAt(i, 2),
+                Principal.table.getValueAt(i, 3),
+                Principal.table.getValueAt(i, 4)});
+
+         
+            modelPior.addRow(new Object[]{Principal.table.getValueAt(i, 0),
+                Principal.table.getValueAt(i, 1),
+                Principal.table.getValueAt(i, 2),
+                Principal.table.getValueAt(i, 3),
+                Principal.table.getValueAt(i, 4)});
         }
 
         // tabela
