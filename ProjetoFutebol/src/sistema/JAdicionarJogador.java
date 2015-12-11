@@ -8,6 +8,7 @@ import javax.swing.*;
 public class JAdicionarJogador {
     private static JFrame jAdicionar;  
     private static Object[] nl;  
+    private JTextField Time;
     private JTextField Jogador;  
     private JTextField PC;  
     private JTextField PE; 
@@ -41,13 +42,14 @@ public class JAdicionarJogador {
         jAdicionar.setLocationRelativeTo(Principal.janelaPrinc);  
   
         //cria componentes  
+        JLabel lTime = new JLabel("Time");
         JLabel ljogador = new JLabel("Jogador");  
         JLabel lpc = new JLabel("Passes Certos");  
         JLabel lpe = new JLabel("Passes Errados");  
         JLabel ldc = new JLabel("Domínios Certos"); 
         JLabel lde = new JLabel("Domínios Errados"); 
          
-  
+         Time = new JTextField();
          Jogador = new JTextField();    
          PE = new JTextField();  
          PC = new JTextField(); 
@@ -62,27 +64,21 @@ public class JAdicionarJogador {
         JButton bok = new JButton("OK");  
         JButton bcancel = new JButton("CANCELAR");  
   
+        lTime.setBounds(30, 30, 100, 20);
+        ljogador.setBounds(30, 70, 100, 20);  
+        lpc.setBounds(30, 110, 150, 20);  
+        lpe.setBounds(30, 150, 150, 20); 
+        ldc.setBounds(30, 190, 150, 20); 
+        lde.setBounds(30, 230, 150, 20); 
          
-        ljogador.setBounds(30, 30, 100, 20);  
-        lpc.setBounds(30, 70, 150, 20);  
-        lpe.setBounds(30, 110, 150, 20); 
-        ldc.setBounds(30, 150, 150, 20); 
-        lde.setBounds(30, 190, 150, 20); 
-         
-  
-        Jogador.setBounds(170, 30, 220, 20); 
-        
-        PC.setBounds(170, 70, 80, 20);  
-        
-        
-        
-        PE.setBounds(170, 110, 80, 20);
+        Time.setBounds(170, 30, 220, 20);
+        Jogador.setBounds(170, 70, 220, 20); 
+        PC.setBounds(170,110, 80, 20);  
+        PE.setBounds(170, 150, 80, 20);
         PE.setBackground(Color.WHITE);
-        
-        DC.setBounds(170, 150, 80, 20);
+        DC.setBounds(170, 190, 80, 20);
         DC.setBackground(Color.WHITE);
-        
-        DE.setBounds(170, 190, 80, 20);
+        DE.setBounds(170, 230, 80, 20);
         DE.setBackground(Color.WHITE);
         
         //tprioridade.setBounds(170, 230, 80, 20);
@@ -101,12 +97,14 @@ public class JAdicionarJogador {
          
   
         //adiciona a janela  
+        jAdicionar.add(lTime);
         jAdicionar.add(ljogador);  
         jAdicionar.add(lpc);  
         jAdicionar.add(lpe);
         jAdicionar.add(ldc);
         jAdicionar.add(lde);
          
+        jAdicionar.add(Time);
         jAdicionar.add(Jogador);  
         jAdicionar.add(PC);  
         jAdicionar.add(PE); 
@@ -125,7 +123,7 @@ public class JAdicionarJogador {
                 
                 
                  //adiciona linha  
-                nl = new Object[]{Jogador.getText(),PC.getText() ,PE.getText() ,DC.getText(),DE.getText()};  
+                nl = new Object[]{Time.getText(),Jogador.getText(),PC.getText() ,PE.getText() ,DC.getText(),DE.getText()};  
                 Principal.adicionaLinha(nl);  
                 Principal.openJa=0;  
                 jAdicionar.dispose();  

@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class Principal {
 
-	protected static int quantum; // quantum
+	protected static int estatistica; // estatistica
 	protected static JFrame janelaPrinc; // janela principal
 	protected static JTable table; // tabela em que os processos são inseridos
 	protected static int p = 0; // contador de processos
@@ -37,7 +37,7 @@ public class Principal {
         private static JButton btnCalcular;
 	private String alerta = "Erro!";
 	private static DefaultTableModel model; // modelo de table - modelo de dados
-	private static JTextField tquantum; // campo de texto para o quantum
+	private static JTextField tEstatistica; // campo de texto para o estatistica
 
 	public Principal() {
 		// inicializa janela principal
@@ -67,7 +67,8 @@ public class Principal {
 			}
 		};
 
-		model.addColumn("Jogador");
+		model.addColumn("Time");
+                model.addColumn("Jogador");
 		model.addColumn("Passes Certos");
 		model.addColumn("Passes Errados");
 		model.addColumn("Domínios Certos");
@@ -106,7 +107,7 @@ public class Principal {
 				int colunas = table.getSelectedColumn();
 				int linhas = table.getSelectedRow();
 				if (linhas == -1 || colunas == -1) {
-					// System.out.println("Selecione linha");
+					JOptionPane.showMessageDialog(null,"Selecione a linha");
 				} else {
 					model.removeRow(linhas);
 					// decrementa a varialvel de controle para processos
@@ -119,7 +120,7 @@ public class Principal {
 
 			@SuppressWarnings("unused")
 			public void actionPerformed(ActionEvent e) {
-				// abre frame resultado e pega quantum
+				// abre frame resultado e pega estatistica
 				
                             
                                         Resultado res = new Resultado();
@@ -158,25 +159,24 @@ public class Principal {
 		// itens do menu
 		itemAdicionar = new JMenuItem("Adicionar Jogador");
 		itemRemover = new JMenuItem("Remover Jogador");
-                btnCalcular = new JButton("Estatísticas");
+                btnCalcular = new JButton("Gerar Estatísticas");
                 
                
                 
                 itemCreditos = new JMenuItem("Créditos");
 
 		
-		JLabel lquantum = new JLabel("Jogadores");
+		JLabel lEstatistica = new JLabel("Jogadores");
 		
-		tquantum = new JTextField();
-		lquantum.setBounds(50, 0, 80, 50);
-		tquantum.setBounds(125, 15, 60, 20);
+		tEstatistica = new JTextField();
                 
-             
+		lEstatistica.setBounds(50, 0, 80, 50);
                 
+		tEstatistica.setBounds(125, 15, 60, 20);
                 
-                btnCalcular.setBounds(185,15,120,20);
+                btnCalcular.setBounds(50,220,150,20);
               
-		janelaPrinc.add(lquantum);
+		janelaPrinc.add(lEstatistica);
 		
                 janelaPrinc.add(btnCalcular);
 	}
